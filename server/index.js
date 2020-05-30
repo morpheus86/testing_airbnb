@@ -3,9 +3,9 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const routes = require("./routes");
-const PORT = 2000;
+const port = process.env.PORT || 2000;
 const app = express();
-const House = require("../modeling/house.model");
+// const House = require("../modeling/house.model");
 app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,8 +41,8 @@ app.use((err, req, res, next) => {
 // });
 // House.sync({ alter: true });
 
-app.listen(PORT, () => {
-  console.log(`application is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`application is running on port ${port}`);
 });
 
 module.exports = app;

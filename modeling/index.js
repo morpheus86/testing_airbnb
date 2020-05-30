@@ -1,7 +1,7 @@
-const House = require("./house.model");
-const db = require("./database");
+// const House = require("./house.model");
+// const db = require("./database");
 
-module.exports = {
-  db,
-  House,
-};
+// module.exports = {
+//   db,
+//   House,
+// };

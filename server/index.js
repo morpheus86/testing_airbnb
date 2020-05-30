@@ -3,9 +3,9 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const routes = require("./routes");
-const PORT = 5000;
+const PORT = 2000;
 const app = express();
-const House = require("../models/house.model");
+const House = require("../modeling/house.model");
 app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,7 +39,7 @@ app.use((err, req, res, next) => {
 //     next(error);
 //   }
 // });
-House.sync({ alter: true });
+// House.sync({ alter: true });
 
 app.listen(PORT, () => {
   console.log(`application is running on port ${PORT}`);
